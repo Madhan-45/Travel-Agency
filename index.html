@@ -1341,6 +1341,18 @@
          <!-- header html end -->
       </div>
 
+      <script>
+document.addEventListener("DOMContentLoaded", function() {
+    let priceElements = document.querySelectorAll("*:not(script):not(style)");
+    
+    priceElements.forEach(element => {
+        if (element.childNodes.length === 1 && element.childNodes[0].nodeType === 3) {
+            element.textContent = element.textContent.replace(/\$\s?/g, "₹");
+        }
+    });
+});
+</script>
+
       <!-- JavaScript -->
       <script src="assets/js/jquery.js"></script>
       <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
